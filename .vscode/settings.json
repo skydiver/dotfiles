@@ -1,0 +1,226 @@
+{
+    // Workbench
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Cobalt2",
+    "workbench.fontAliasing": "antialiased",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
+
+    // Brackets colorizer
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
+
+    // theme override (Cobalt 2)
+    "workbench.colorCustomizations": {
+        "activityBar.activeBorder": "#ffc600",
+        "activityBar.activeBackground": "#ffc60020",
+    },
+
+    // Breadcrumbs
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+
+    // Editor
+    "editor.emptySelectionClipboard": false,
+    "editor.folding": false,
+    "editor.formatOnPaste": false,
+    // "editor.fontFamily": "Operator Mono",    // 2021-01-16
+    "editor.fontFamily": "FiraCode-Retina",     // 2021-01-16
+    "editor.fontLigatures": true,               // 2021-01-16
+    "editor.fontSize": 18,
+    "editor.letterSpacing": 0.2,
+    "editor.matchBrackets": "never",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.quickSuggestionsDelay": 0,
+    "editor.renderControlCharacters": false,
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [80, 100, 120],
+    "editor.snippetSuggestions": "top",
+
+    // Editor MiniMap
+    "editor.minimap.enabled": false,
+    "editor.minimap.showSlider": "always",
+
+    // 2020-07-29: Disable “Peek” Previews
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    // Window
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+
+    // Trim stuff on save
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    // Sidebar
+    "explorer.autoReveal": false,
+    "explorer.openEditors.visible": 0,
+    "explorer.compactFolders": false,
+
+    // Terminal Settings
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontSize": 14,  // 14
+
+    // Only at this machine ...
+    "keyboard.touchbar.enabled": false,
+
+    // Some privacy ...
+    "telemetry.telemetryLevel": "off",
+    // "telemetry.enableCrashReporter": false,
+    // "telemetry.enableTelemetry": false,
+
+    // HTML autocomplete in .blade and .vue files (https://calebporzio.com/my-vs-code-setup-2)
+    "emmet.includeLanguages": {
+        "blade.php": "html",
+        "vue": "html"
+    },
+
+    // Syntax highlighting in non-php files (https://calebporzio.com/my-vs-code-setup-2)
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php",
+        "*.blade.php": "blade",
+        "*.php": "php" // this is super important, otherwise intelephense will not auto-index your project.
+    },
+
+    // Exclude from search (https://calebporzio.com/my-vs-code-setup-2)
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        // Hide everything in /public, except "index.php"
+        "**/public/[abcdefghjklmnopqrstuvwxyz]*": true,
+        "**/public/i[abcdefghijklmopqrstuvwxyz]*": true,
+        // Hide everything in /vendor, except "laravel" folder.
+        "**/vendor/[abcdefghijkmnopqrstuvwxyz]*": true,
+        "**/vendor/l[bcdefghijklmnopqrstuvwxyz]*": true,
+        "storage/framework/views": true
+    },
+
+    // LINTING PACKAGES
+    "phpcs.standard": "~/Documents/phpcs-ruleset.xml",
+    "phpcs.executablePath": "/usr/local/bin/phpcs",
+    // "eslint.options": {
+    //     "configFile": "/Users/martin/Documents/.eslintrc"
+    // },
+
+    // DISABLED: 2022-01-17
+    // Extension: Bracket Pair Colorizer
+    // "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    // "bracket-pair-colorizer-2.showBracketsInRuler": false,
+    // "bracket-pair-colorizer-2.showVerticalScopeLine": true,
+    // "bracket-pair-colorizer-2.showHorizontalScopeLine": true,
+    // "bracket-pair-colorizer-2.highlightActiveScope": true,
+    // "bracket-pair-colorizer-2.activeScopeCSS": [
+    //     "borderStyle : solid",
+    //     "borderWidth : 3px",
+    //     "borderColor : {color}",
+    //     "opacity: 0.4"
+    // ],
+    // "bracket-pair-colorizer-2.scopeLineCSS": [
+    //     "borderStyle : solid",
+    //     "borderWidth : 3px",
+    //     "borderColor : {color}",
+    //     "opacity: 0.4"
+    // ],
+
+    // // JavaScript specific settings
+    // "[javascript]": {
+    //     "editor.tabSize": 2,
+    //     "editor.defaultFormatter": "vscode.typescript-language-features",
+    // },
+    // "beautify.config": "/Users/martin/Documents/.jsbeautifyrc",
+
+    // PHP specific settings
+    "php.suggest.basic": false,
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.activeIconPack": "vue_vuex",
+    "git.suggestSmartCommit": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+
+    // format blade files
+    "blade.format.enable": true,
+    "html.format.wrapAttributes": "force-expand-multiline",
+
+    // disable debug button on package.json
+    "debug.javascript.codelens.npmScripts": "never",
+
+    // Extension: Intelephense
+    "intelephense.telemetry.enabled": false,
+    "redhat.telemetry.enabled": false,
+
+    // 2021-05-04
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": false,
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    // "workbench.editorAssociations": {
+    //     "*.ipynb": "jupyter.notebook.ipynb"
+    // },
+
+    // 2021-06-15
+    "ShortcutMenuBar.navigateBack": false,
+    "ShortcutMenuBar.navigateForward": false,
+    "ShortcutMenuBar.userButton01Command": "openInGitTower.open",
+    "ShortcutMenuBar.userButton02Command": "simpleBrowser.show",
+    // "ShortcutMenuBar.userButton02Command": "workbench.action.editor.changeLanguageMode",
+    "ShortcutMenuBar.openFilesList": false,
+
+    "workbench.settings.editor": "json",
+
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true
+    },
+    "search.searchOnType": false,
+    "editor.accessibilitySupport": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // SETUP DEFAULT FORMATTERS
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    // ERROR LENS EXTENSION
+    "errorLens.enabled": true,
+    "errorLens.statusBarIconsEnabled": false,
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "warning",
+        "info",
+        "error"
+    ],
+
+    // JAVASCRIPT / TYPESCRIPT CONFIG
+    "js/ts.implicitProjectConfig.checkJs": true,
+}
