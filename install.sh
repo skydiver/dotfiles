@@ -1,1 +1,1 @@
-cp -R .vscode $CODESPACE_VSCODE_FOLDER
+cp -R /workspaces/.codespaces/.persistedshare/dotfiles/.vscode $CODESPACE_VSCODE_FOLDER
