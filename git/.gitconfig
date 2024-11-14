@@ -1,52 +1,53 @@
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
 [user]
-	name = Martín M.
-	email = skydiver@users.noreply.github.com
-	signingkey = D8D9D4D5ABDCA908B2B6797C4CD190C59417D7A5
+    name = Martín M.
+    email = skydiver@users.noreply.github.com
+    signingkey = D8D9D4D5ABDCA908B2B6797C4CD190C59417D7A5
+
 [core]
-	excludesfile = /Users/martin/.gitignore_global
-	editor = nano
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    excludesfile = /Users/martin/.gitignore_global
+    editor = nano
+
 [commit]
-	template = /Users/martin/.stCommitMsg
-	gpgsign = false
-[mergetool]
-	keepBackup = true
-	prompt = false
-# 	keepBackup = true
-[diff]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
-[difftool  "deltawalker"]
-	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-diff' "$LOCAL" "$REMOTE"
-[merge]
-	tool = Kaleidoscope
-[mergetool  "deltawalker"]
-	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-	trustExitCode = true
+    template = /Users/martin/.stCommitMsg
+    gpgsign = false
+
 [alias]
-	# start = !git init && git commit --allow-empty -m \"Initial commit\"
     start = !git init && git config commit.gpgsign true && git commit --allow-empty -m \"Initial commit\"
-	co = checkout
-	fa = fetch --all
+    co = checkout
+    fa = fetch --all
+
 [gpg]
-	program = gpg
+    program = gpg
+
 [init]
-	defaultBranch = master
+    defaultBranch = master
+
 [pull]
-	rebase = false
+    rebase = false
+
+[diff]
+    tool = Kaleidoscope
+
+[difftool]
+    prompt = false
+
+[merge]
+    tool = Kaleidoscope
+
+[mergetool]
+    keepBackup = true
+    prompt = false
+
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustexitcode = true
+    trustExitCode = true
