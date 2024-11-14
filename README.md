@@ -1,5 +1,4 @@
-# dotfiles
-
+# Visual Studio Code
 
 ## Installation
 
