@@ -1,0 +1,133 @@
+###############################################################################
+# ENABLE bash completion
+#
+# SOURCE: https://github.com/eddiezane/lunchy/issues/57
+###############################################################################
+autoload bashcompinit
+bashcompinit
+
+
+###############################################################################
+# FILESYSTEM
+###############################################################################
+# List & Directories aliases
+alias ll="ls -lha"
+
+# a quick way to get out of current directory #
+# Source: https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+
+
+###############################################################################
+# NPM SHORTCUTS
+###############################################################################
+alias npm-links="npm ls -g --depth=0 --link=true"
+alias npm-global="npm ls -g --depth=0"
+#alias npm="pnpm"
+
+
+###############################################################################
+# LINUX COMMANDS HACKS
+###############################################################################
+# pgrep with pid
+alias pgrep="pgrep -l"
+
+# custom tailf
+alias tailf="tail -f"
+
+# History + Grep
+alias hgrep="history | grep -i $1"
+
+# docker-compose
+# alias dkc="docker-compose"
+
+# rhash
+alias rhhere="rhash --sha256 --recursive --percents --speed --output .sha256 *"
+
+# tar with date
+dtar() {
+  if [[ "$1" ]]
+  then
+    tar -zcvf "${1%/}__$(date '+%Y%m%d_%H%M%S').tar.gz" "$1";
+  else
+    echo "Error: no directory specified"
+  fi
+}
+
+# unrar all files with password
+unrarpass() {
+  if [[ "$1" ]]
+  then
+    for f in *rar; do
+      unrar x -p$1 "$f"
+    done
+  else
+    echo "Error: no password specified"
+  fi
+}
+
+
+
+###############################################################################
+# BREW
+###############################################################################
+# Show Brew packages
+alias brew-list="brew ls --versions"
+
+# Brew services
+alias brew-services="brew services list"
+
+
+###############################################################################
+# macOS SOFTWARE
+###############################################################################
+# Open Tower in current dir
+# alias tower`="gittower ."
+alias tower='REPO_ROOT=$(git rev-parse --show-toplevel 2> /dev/null) && [ -z "$REPO_ROOT" ] && echo "Error: Must be run inside a Git repository." || gittower "$REPO_ROOT"'
+
+# Time Machine logs
+alias tmlogs="log stream --style syslog  --predicate 'senderImagePath contains[cd] \"TimeMachine\"' --info"
+
+
+###############################################################################
+# SERVICES
+###############################################################################
+# SPEEDTEST
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
+
+###############################################################################
+# DEVELOPMENT
+###############################################################################
+# open github repo
+alias ghr="gh repo view -w"
+
+
+###############################################################################
+# PYTHON
+###############################################################################
+# Fix Python
+# Source: https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python
+#export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
+alias python=/usr/bin/python3
+
+###############################################################################
+# MySQL
+###############################################################################
+# alias mysql="/opt/homebrew/opt/mysql-client/bin/mysql"
+
+
+###############################################################################
+# ANDROID TOOLS
+###############################################################################
+alias android-emulator="/Users/martin/Library/Android/sdk/emulator/emulator"
+alias adb="/Users/martin/Library/Android/sdk/platform-tools/adb"
+
+
+alias vim="nvim"
+alias vi="nvim"
+
