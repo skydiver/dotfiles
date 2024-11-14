@@ -1,11 +1,6 @@
-############################################
-#  PATHS
-############################################
-#export PATH=$PATH:/Users/martin/Scripts:/Users/martin/.composer/vendor/bin:/Users/martin/Software/AndroidTools:/usr/local/sbin
-# export PATH=$PATH:/Users/martin/Scripts:/Users/martin/.composer/vendor/bin:/Users/martin/Software/AndroidTools:/usr/local/sbin:/Users/martin/Applications/flutter/bin
-# export PATH=$PATH:/Users/martin/Scripts:/opt/homebrew/opt/mysql-client/bin
-# export PATH=$PATH:/Users/martin/Scripts
-# Adding paths one by one
+################################################################################
+# Add custom paths to PATH
+################################################################################
 path_to_add=(
     "/Users/martin/Scripts"
     "/opt/homebrew/opt/mysql-client/bin"
@@ -19,74 +14,27 @@ done
 
 
 
-############################################
-#  zsh-completions
-############################################
+################################################################################
+# Enable zsh-completions
+################################################################################
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 
+
 ############################################
-#  FNM
-############################################ 
-#eval "$(fnm env)"
+# Set up fnm environment
+############################################
 eval "$(fnm env --use-on-cd)"
 
 
-############################################
-#  GitHub Copilot CLI
-############################################ 
-# eval "$(github-copilot-cli alias -- "$0")"
 
-
-
-
-
-
-
-
-
-
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-#[[ -f /Users/martin/Development/Electron/IMM/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/martin/Development/Electron/IMM/node_modules/tabtab/.completions/electron-forge.zsh
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-# [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-# [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-# [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
-#### FIG ENV VARIABLES ####
-# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-
-# bun completions
-# [ -s "/Users/martin/.bun/_bun" ] && source "/Users/martin/.bun/_bun"
-
-# bun
-# export BUN_INSTALL="/Users/martin/.bun"
-# export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-
-
-
-#ALIASFILE=~/.zsh/.zsh-aliases
-#source $ALIASFILE
-
-# function add_alias() {
-#     if [[ -z $1 || -z $2 || $# -gt 2 ]]; then
-#         echo usage:
-#         echo "\t\$$0 ll 'ls -l'"
-#     else
-#         echo "alias $1='$2'" >> $ALIASFILE
-#         echo "alias ADDED to $ALIASFILE"
-#     fi
-# }
+###############################################################################
+# BREW AUTOCOMPLETE
+# SOURCE: https://docs.brew.sh/Shell-Completion
+###############################################################################
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
