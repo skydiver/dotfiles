@@ -1,0 +1,21 @@
+# OVERRIDE THEME
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# POWERLEVEL9K CONFIG
+#POWERLEVEL9K_MODE='nerdfont-complete'
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status dir vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+
+############################################
+#  AGNOSTER THEME ONLY
+#  REMOVE HOST
+############################################
+#prompt_context() {
+#  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+#  fi
+#}
+
+typeset -g POWERLEVEL9K_MODE='nerdfont-complete'
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status dir vcs)
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
